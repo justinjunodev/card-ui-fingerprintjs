@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "fingerprintjs2": "^2.1.2",
     "formik": "^2.1.5",
     "overmind": "^25.0.2",
     "overmind-react": "^26.0.2",

@@ -47,7 +47,7 @@ const Form = () => {
     },
   })
 
-  const { values, touched, errors } = formik
+  const { touched, errors } = formik
 
   if (state.cardCreated) {
     return <p>Purchased!</p>
@@ -55,7 +55,7 @@ const Form = () => {
 
   return (
     <main className="App">
-      <h2>Payment Details</h2>
+      <h2>Card Details</h2>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="firstName">First Name</label>
         <input
@@ -107,12 +107,8 @@ const Form = () => {
           <span>{errors.expYear}</span>
         ) : null}
 
-        <button type="submit">Pay</button>
+        <button type="submit">Add Card</button>
       </form>
-
-      <pre>
-        <code>{JSON.stringify(values)}</code>
-      </pre>
     </main>
   )
 }
