@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react"
 import { useFormik } from "formik"
+import { useOvermind } from "../../overmind"
 
 const validate = (values) => {
   const errors = {}
@@ -26,6 +27,11 @@ const validate = (values) => {
 }
 
 const Form = () => {
+  const {
+    state,
+    actions: { addCardDetails, createCard },
+  } = useOvermind()
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -36,12 +42,17 @@ const Form = () => {
     },
     validate,
     onSubmit: (values) => {
-      // eslint-disable-next-line no-alert
-      alert(JSON.stringify(values, null, 2))
+      addCardDetails(values)
+      createCard()
     },
   })
 
   const { values, touched, errors } = formik
+
+  if (state.cardCreated) {
+    return <p>Purchased!</p>
+  }
+
   return (
     <main className="App">
       <h2>Payment Details</h2>

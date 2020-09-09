@@ -1581,6 +1581,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.2.tgz#ace1880c03594cc3e80206d96847157d8e7fa349"
   integrity sha512-bnoqK579sAYrQbp73wwglccjJ4sfRdKU7WNEZ5FW4K2U6Kc0/eZ5kvXG0JKsEKFB50zrFmfFt52/cvBbZa7eXg==
 
+"@types/node@^10.5.1":
+  version "10.17.30"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.30.tgz#20556a0d7f62b83e163973a6cd640af636d3dd3b"
+  integrity sha512-euU8QLX0ipj+5mOYa4ZqZoTv+53BY7yTg9I2ZIhDXgiI3M+0n4mdAt9TQCuvxVAgU179g8OsRLaBt0qEi0T6xA==
+
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -2462,6 +2467,14 @@ bcrypt-pbkdf@^1.0.0:
   integrity sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
   dependencies:
     tweetnacl "^0.14.3"
+
+betsy@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/betsy/-/betsy-1.0.2.tgz#e53abc4750d6a6a112a7835f723db0ca01a3b197"
+  integrity sha512-yt/OUTbSeCRj4uwbDnjTbnWgrLsgBl1nzJLdZH2eOtrf3SDH7svdoTMWOvTFhUdIM86pY6k21o/4SCIT6RYjig==
+  dependencies:
+    "@types/node" "^10.5.1"
+    tslib "^1.9.3"
 
 big.js@^5.2.2:
   version "5.2.2"
@@ -5840,7 +5853,7 @@ is-path-inside@^2.1.0:
   dependencies:
     path-is-inside "^1.0.2"
 
-is-plain-obj@^1.0.0:
+is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
   integrity sha1-caUMhCnfync8kqOQpKA7OfzVHT4=
@@ -7338,6 +7351,11 @@ node-releases@^1.1.52:
   dependencies:
     semver "^6.3.0"
 
+non-blocking-json@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/non-blocking-json/-/non-blocking-json-1.1.1.tgz#2180c25ee0330475bdc5e14b27d0750d7c0d73a4"
+  integrity sha512-iweGQWA3+GZkjJEXhvtRh1fjo8DpnotpL8+13NSwaI28X6HaqlYTxAI/ZXawCmva2GS3NaOl5NdNudg3RyQreQ==
+
 normalize-package-data@^2.3.2:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
@@ -7613,6 +7631,24 @@ os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
+
+overmind-react@^26.0.2:
+  version "26.0.2"
+  resolved "https://registry.yarnpkg.com/overmind-react/-/overmind-react-26.0.2.tgz#5bc648cd00148fbe004af55d3d2b12ac9e9dbed0"
+  integrity sha512-U0TI7ybdr0qZyKQgHFg9unDg16w9RmaF4TgHlJQTyl2ICZd2CePTAZQgfJKVG7Sy2MPTSq/pt7RjgiAy/xg8mw==
+  dependencies:
+    overmind "25.0.2"
+
+overmind@25.0.2, overmind@^25.0.2:
+  version "25.0.2"
+  resolved "https://registry.yarnpkg.com/overmind/-/overmind-25.0.2.tgz#a86ac3db212768a957d2cf8706e0001faa88cf4e"
+  integrity sha512-LUD6vXLoPSEQbL36MByDgmdJ8JsOSBcK/tJxYmsSMcbZw0b8KBia1uNHZGb2WFuLfMIS2abbg4stDEUPb7wr8Q==
+  dependencies:
+    betsy "1.0.2"
+    is-plain-obj "^1.1.0"
+    non-blocking-json "1.1.1"
+    proxy-state-tree "6.0.2"
+    tslib "^1.10.0"
 
 p-each-series@^1.0.0:
   version "1.0.0"
@@ -8789,6 +8825,13 @@ proxy-addr@~2.0.5:
   dependencies:
     forwarded "~0.1.2"
     ipaddr.js "1.9.1"
+
+proxy-state-tree@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/proxy-state-tree/-/proxy-state-tree-6.0.2.tgz#8cfd51c1a2b84910e3e6cc1a91ecefacea88665d"
+  integrity sha512-FZh7PqvG7SDCOmnSFKmXoF9eWBXTiBkc/f1+1dSi+Wcnc7j7NPeP7HT2HgXUhLe1WL9GDYVe6W2L4VebonwK9w==
+  dependencies:
+    is-plain-obj "^1.1.0"
 
 prr@~1.0.1:
   version "1.0.1"
@@ -10532,6 +10575,11 @@ tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+
+tslib@^1.9.3:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
+  integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 
 tsutils@^3.17.1:
   version "3.17.1"
