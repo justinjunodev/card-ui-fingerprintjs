@@ -1,9 +1,12 @@
 import React from "react"
+import Fade from "react-reveal/Fade"
 import { CardWrapper, CardPlaceholderPreview } from "./styles"
 
 const CardPlaceholder = () => (
   <CardWrapper>
-    <CardPlaceholderPreview />
+    <Fade duration={2500}>
+      <CardPlaceholderPreview />
+    </Fade>
   </CardWrapper>
 )
 

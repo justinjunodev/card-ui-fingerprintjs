@@ -4,11 +4,11 @@ import fpjs from "../../assets/fpjs-logo.png"
 export const CardWrapper = styled.section`
   background-color: var(--primary);
   padding: var(--xxl) 0;
-  > div {
+  > div > div {
     margin: var(--xs) auto;
     height: 251px;
     max-width: 468px;
-    width: calc(100 % - (var(--md) * 2));
+    width: calc(100% - (var(--md) * 2));
     background-image: url(${fpjs});
     background-repeat: no-repeat;
     background-blend-mode: lighten;

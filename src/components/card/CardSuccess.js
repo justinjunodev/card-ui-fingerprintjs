@@ -1,4 +1,5 @@
 import React from "react"
+import Tada from "react-reveal/Tada"
 import { useOvermind } from "../../overmind"
 import { CardWrapper, CardSuccessPreview, CardSuccessDetails } from "./styles"
 
@@ -12,17 +13,19 @@ const CardSuccess = () => {
 
   return (
     <CardWrapper>
-      <CardSuccessPreview>
-        <CardSuccessDetails>
-          <li>{formatCardNumber(cardNumber)}</li>
-          <li>
-            {firstName} {lastName}
-          </li>
-          <li>
-            <small>Expires {expYear}</small>
-          </li>
-        </CardSuccessDetails>
-      </CardSuccessPreview>
+      <Tada delay={500}>
+        <CardSuccessPreview>
+          <CardSuccessDetails>
+            <li>{formatCardNumber(cardNumber)}</li>
+            <li>
+              {firstName} {lastName}
+            </li>
+            <li>
+              <small>Expires {expYear}</small>
+            </li>
+          </CardSuccessDetails>
+        </CardSuccessPreview>
+      </Tada>
     </CardWrapper>
   )
 }

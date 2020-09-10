@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react"
+import Slide from "react-reveal/Slide"
 import { useFormik } from "formik"
 import { useOvermind } from "../../overmind"
 import {
@@ -59,60 +60,64 @@ const DetailsCard = () => {
 
   return (
     <DetailsWrapper>
-      <DetailsContent>
-        <DetailsHeading>Card Details</DetailsHeading>
-        <DetailsCardForm onSubmit={formik.handleSubmit}>
-          <DetailsCardFormLabel htmlFor="firstName">
-            First Name:
-          </DetailsCardFormLabel>
-          <DetailsCardFormInput
-            type="text"
-            id="firstName"
-            {...formik.getFieldProps("firstName")}
-          />
-          {errors.firstName && touched.firstName ? (
-            <DetailsCardFormError>{errors.firstName}</DetailsCardFormError>
-          ) : null}
+      <Slide bottom>
+        <DetailsContent>
+          <DetailsHeading>Card Details</DetailsHeading>
+          <DetailsCardForm onSubmit={formik.handleSubmit}>
+            <DetailsCardFormLabel htmlFor="firstName">
+              First Name:
+            </DetailsCardFormLabel>
+            <DetailsCardFormInput
+              type="text"
+              id="firstName"
+              {...formik.getFieldProps("firstName")}
+            />
+            {errors.firstName && touched.firstName ? (
+              <DetailsCardFormError>{errors.firstName}</DetailsCardFormError>
+            ) : null}
 
-          <DetailsCardFormLabel htmlFor="lastName">
-            Last Name:
-          </DetailsCardFormLabel>
-          <DetailsCardFormInput
-            type="text"
-            id="lastName"
-            {...formik.getFieldProps("lastName")}
-          />
-          {errors.lastName && touched.lastName ? (
-            <DetailsCardFormError>{errors.lastName}</DetailsCardFormError>
-          ) : null}
+            <DetailsCardFormLabel htmlFor="lastName">
+              Last Name:
+            </DetailsCardFormLabel>
+            <DetailsCardFormInput
+              type="text"
+              id="lastName"
+              {...formik.getFieldProps("lastName")}
+            />
+            {errors.lastName && touched.lastName ? (
+              <DetailsCardFormError>{errors.lastName}</DetailsCardFormError>
+            ) : null}
 
-          <DetailsCardFormLabel htmlFor="cardNumber">
-            Credit Card Number:
-          </DetailsCardFormLabel>
-          <DetailsCardFormInput
-            type="number"
-            id="cardNumber"
-            {...formik.getFieldProps("cardNumber")}
-          />
-          {errors.cardNumber && touched.cardNumber ? (
-            <DetailsCardFormError>{errors.cardNumber}</DetailsCardFormError>
-          ) : null}
+            <DetailsCardFormLabel htmlFor="cardNumber">
+              Credit Card Number:
+            </DetailsCardFormLabel>
+            <DetailsCardFormInput
+              type="number"
+              id="cardNumber"
+              {...formik.getFieldProps("cardNumber")}
+            />
+            {errors.cardNumber && touched.cardNumber ? (
+              <DetailsCardFormError>{errors.cardNumber}</DetailsCardFormError>
+            ) : null}
 
-          <DetailsCardFormLabel htmlFor="expYear">
-            Expiration Year:
-          </DetailsCardFormLabel>
-          <DetailsCardFormInput
-            type="number"
-            id="expYear"
-            {...formik.getFieldProps("expYear")}
-          />
-          {errors.expYear && touched.expYear ? (
-            <DetailsCardFormError>{errors.expYear}</DetailsCardFormError>
-          ) : null}
+            <DetailsCardFormLabel htmlFor="expYear">
+              Expiration Year:
+            </DetailsCardFormLabel>
+            <DetailsCardFormInput
+              type="number"
+              id="expYear"
+              {...formik.getFieldProps("expYear")}
+            />
+            {errors.expYear && touched.expYear ? (
+              <DetailsCardFormError>{errors.expYear}</DetailsCardFormError>
+            ) : null}
 
-          <DetailsCardFormButton type="submit">Add Card</DetailsCardFormButton>
-        </DetailsCardForm>
-      </DetailsContent>
+            <DetailsCardFormButton type="submit">
+              Add Card
+            </DetailsCardFormButton>
+          </DetailsCardForm>
+        </DetailsContent>
+      </Slide>
     </DetailsWrapper>
   )
 }

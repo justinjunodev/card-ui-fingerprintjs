@@ -1,9 +1,12 @@
 import React from "react"
+import Fade from "react-reveal/Fade"
 import { HeaderWrapper, HeaderLogo } from "./styles"
 
 const Header = () => (
   <HeaderWrapper>
-    <HeaderLogo>Fingerprint</HeaderLogo>
+    <Fade duration={2500}>
+      <HeaderLogo>Fingerprint</HeaderLogo>
+    </Fade>
   </HeaderWrapper>
 )
 
