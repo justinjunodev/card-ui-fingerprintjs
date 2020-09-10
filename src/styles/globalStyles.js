@@ -40,7 +40,6 @@ const GlobalStyles = css`
     font-size: var(--xl);
     font-weight: 600;
     line-height: var(--xl);
-    margin: var(--lg) 0;
   }
   h3 {
     font-size: var(--lg);

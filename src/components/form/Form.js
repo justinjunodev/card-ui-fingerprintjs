@@ -3,25 +3,35 @@
 import React from "react"
 import { useFormik } from "formik"
 import { useOvermind } from "../../overmind"
+import {
+  CardDetailWrapper,
+  CardDetailContent,
+  CardDetailHeading,
+  CardDetailForm,
+  CardDetailFormLabel,
+  CardDetailFormInput,
+  CardDetailFormError,
+  CardDetailFormButton,
+} from "./styles"
 
 const validate = (values) => {
   const errors = {}
   if (!values.firstName) {
-    errors.firstName = "First name is required"
+    errors.firstName = "First name is required."
   }
   if (!values.lastName) {
-    errors.lastName = "Last name is required"
+    errors.lastName = "Last name is required."
   }
   if (!values.cardNumber || values.cardNumber.toString().length !== 16) {
-    errors.cardNumber = "Card number is required and must have 16 digits"
+    errors.cardNumber = "Card number is required and must have 16 digits."
   }
-  if (!values.expMonth || values.expMonth.toString().length !== 2) {
-    errors.expMonth =
-      "Expiration month is required and should be in two digit format"
-  }
-  if (!values.expYear || values.expYear.toString().length !== 2) {
+  if (
+    !values.expYear ||
+    values.expYear.toString().length !== 4 ||
+    values.expYear < 2020
+  ) {
     errors.expYear =
-      "Expiration year is required and should be in two digit format"
+      "Expiration year is required in four digit format and should be current."
   }
   return errors
 }
@@ -37,7 +47,6 @@ const Form = () => {
       firstName: "",
       lastName: "",
       cardNumber: "",
-      expMonth: "",
       expYear: "",
     },
     validate,
@@ -54,62 +63,62 @@ const Form = () => {
   }
 
   return (
-    <main className="App">
-      <h2>Card Details</h2>
-      <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          id="firstName"
-          {...formik.getFieldProps("firstName")}
-        />
-        {errors.firstName && touched.firstName ? (
-          <span>{errors.firstName}</span>
-        ) : null}
+    <CardDetailWrapper>
+      <CardDetailContent>
+        <CardDetailHeading>Card Details</CardDetailHeading>
+        <CardDetailForm onSubmit={formik.handleSubmit}>
+          <CardDetailFormLabel htmlFor="firstName">
+            First Name:
+          </CardDetailFormLabel>
+          <CardDetailFormInput
+            type="text"
+            id="firstName"
+            {...formik.getFieldProps("firstName")}
+          />
+          {errors.firstName && touched.firstName ? (
+            <CardDetailFormError>{errors.firstName}</CardDetailFormError>
+          ) : null}
 
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          type="text"
-          id="lastName"
-          {...formik.getFieldProps("lastName")}
-        />
-        {errors.lastName && touched.lastName ? (
-          <span>{errors.lastName}</span>
-        ) : null}
+          <CardDetailFormLabel htmlFor="lastName">
+            Last Name:
+          </CardDetailFormLabel>
+          <CardDetailFormInput
+            type="text"
+            id="lastName"
+            {...formik.getFieldProps("lastName")}
+          />
+          {errors.lastName && touched.lastName ? (
+            <CardDetailFormError>{errors.lastName}</CardDetailFormError>
+          ) : null}
 
-        <label htmlFor="cardNumber">Credit Card Number</label>
-        <input
-          type="number"
-          id="cardNumber"
-          {...formik.getFieldProps("cardNumber")}
-        />
-        {errors.cardNumber && touched.cardNumber ? (
-          <span>{errors.cardNumber}</span>
-        ) : null}
+          <CardDetailFormLabel htmlFor="cardNumber">
+            Credit Card Number:
+          </CardDetailFormLabel>
+          <CardDetailFormInput
+            type="number"
+            id="cardNumber"
+            {...formik.getFieldProps("cardNumber")}
+          />
+          {errors.cardNumber && touched.cardNumber ? (
+            <CardDetailFormError>{errors.cardNumber}</CardDetailFormError>
+          ) : null}
 
-        <label htmlFor="expMonth">Expiration Month</label>
-        <input
-          type="number"
-          id="expMonth"
-          {...formik.getFieldProps("expMonth")}
-        />
-        {errors.expMonth && touched.expMonth ? (
-          <span>{errors.expMonth}</span>
-        ) : null}
+          <CardDetailFormLabel htmlFor="expYear">
+            Expiration Year:
+          </CardDetailFormLabel>
+          <CardDetailFormInput
+            type="number"
+            id="expYear"
+            {...formik.getFieldProps("expYear")}
+          />
+          {errors.expYear && touched.expYear ? (
+            <CardDetailFormError>{errors.expYear}</CardDetailFormError>
+          ) : null}
 
-        <label htmlFor="expYear">Expiration Year</label>
-        <input
-          type="number"
-          id="expYear"
-          {...formik.getFieldProps("expYear")}
-        />
-        {errors.expYear && touched.expYear ? (
-          <span>{errors.expYear}</span>
-        ) : null}
-
-        <button type="submit">Add Card</button>
-      </form>
-    </main>
+          <CardDetailFormButton type="submit">Add Card</CardDetailFormButton>
+        </CardDetailForm>
+      </CardDetailContent>
+    </CardDetailWrapper>
   )
 }
 
