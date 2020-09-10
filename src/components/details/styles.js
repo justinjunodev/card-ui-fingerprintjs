@@ -40,6 +40,10 @@ export const DetailsCardSuccess = styled.div`
       margin-left: var(-sm);
     }
   }
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
 `
 
 export const DetailsCardForm = styled.form`

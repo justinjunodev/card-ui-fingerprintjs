@@ -16,7 +16,13 @@ const DetailsSuccess = () => (
           <p>Your card details have been saved.</p>
           <h3>Next Steps</h3>
           <ul>
-            <li>Checkout the repo on Github!</li>
+            <li>
+              Check out the{" "}
+              <a href="https://github.com/justinjunodev/card-ui-fingerprintjs">
+                repo
+              </a>
+              .
+            </li>
             <li>Schedule an interview and hire me.</li>
             <li>Build some really cool stuff.</li>
           </ul>
