@@ -6,12 +6,12 @@ import Environment from "./components/environment"
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Card />
       <Details />
       <Environment />
-    </div>
+    </>
   )
 }
 

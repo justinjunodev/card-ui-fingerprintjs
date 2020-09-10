@@ -8,6 +8,7 @@ const GlobalStyles = css`
     --dark: #1c1c1f;
     --mid: #797979;
     --light: #f8f9fa;
+    --shadow: 0.75rem 0.75rem 1.25rem 0px rgba(0, 0, 0, 0.175);
     --xxl: 2.441rem;
     --xl: 1.953rem;
     --lg: 1.563rem;

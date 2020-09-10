@@ -4,8 +4,8 @@ export const DetailsWrapper = styled.main`
   margin: 0 auto;
   background: linear-gradient(
     to Bottom,
-    var(--primary) var(--xxl),
-    transparent 50%
+    var(--primary) calc(var(--xl) * 2),
+    transparent 0
   );
 `
 
@@ -17,7 +17,7 @@ export const DetailsContent = styled.div`
   background: white;
   border-radius: var(--xs);
   border: 2px solid var(--primary);
-  box-shadow: var(--xs) var(--xs) var(--md) 0px rgba(0, 0, 0, 0.175);
+  box-shadow: var(--shadow);
 `
 
 export const DetailsHeading = styled.h2`

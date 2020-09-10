@@ -15,9 +15,7 @@ const DetailsSuccess = () => (
         <h3>Next Steps</h3>
         <ul>
           <li>Checkout the repo on Github!</li>
-          <li>
-            Schedule an interview and hire me <i>(please)</i>.
-          </li>
+          <li>Schedule an interview and hire me.</li>
           <li>Work and party together forever.</li>
         </ul>
       </DetailsCardSuccess>
