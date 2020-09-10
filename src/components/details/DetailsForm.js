@@ -4,14 +4,14 @@ import React from "react"
 import { useFormik } from "formik"
 import { useOvermind } from "../../overmind"
 import {
-  CardDetailWrapper,
-  CardDetailContent,
-  CardDetailHeading,
-  CardDetailForm,
-  CardDetailFormLabel,
-  CardDetailFormInput,
-  CardDetailFormError,
-  CardDetailFormButton,
+  DetailsWrapper,
+  DetailsContent,
+  DetailsHeading,
+  DetailsCardForm,
+  DetailsCardFormLabel,
+  DetailsCardFormInput,
+  DetailsCardFormError,
+  DetailsCardFormButton,
 } from "./styles"
 
 const validate = (values) => {
@@ -36,9 +36,8 @@ const validate = (values) => {
   return errors
 }
 
-const Form = () => {
+const DetailsCard = () => {
   const {
-    state,
     actions: { addCardDetails, createCard },
   } = useOvermind()
 
@@ -58,68 +57,64 @@ const Form = () => {
 
   const { touched, errors } = formik
 
-  if (state.cardCreated) {
-    return <p>Purchased!</p>
-  }
-
   return (
-    <CardDetailWrapper>
-      <CardDetailContent>
-        <CardDetailHeading>Card Details</CardDetailHeading>
-        <CardDetailForm onSubmit={formik.handleSubmit}>
-          <CardDetailFormLabel htmlFor="firstName">
+    <DetailsWrapper>
+      <DetailsContent>
+        <DetailsHeading>Card Details</DetailsHeading>
+        <DetailsCardForm onSubmit={formik.handleSubmit}>
+          <DetailsCardFormLabel htmlFor="firstName">
             First Name:
-          </CardDetailFormLabel>
-          <CardDetailFormInput
+          </DetailsCardFormLabel>
+          <DetailsCardFormInput
             type="text"
             id="firstName"
             {...formik.getFieldProps("firstName")}
           />
           {errors.firstName && touched.firstName ? (
-            <CardDetailFormError>{errors.firstName}</CardDetailFormError>
+            <DetailsCardFormError>{errors.firstName}</DetailsCardFormError>
           ) : null}
 
-          <CardDetailFormLabel htmlFor="lastName">
+          <DetailsCardFormLabel htmlFor="lastName">
             Last Name:
-          </CardDetailFormLabel>
-          <CardDetailFormInput
+          </DetailsCardFormLabel>
+          <DetailsCardFormInput
             type="text"
             id="lastName"
             {...formik.getFieldProps("lastName")}
           />
           {errors.lastName && touched.lastName ? (
-            <CardDetailFormError>{errors.lastName}</CardDetailFormError>
+            <DetailsCardFormError>{errors.lastName}</DetailsCardFormError>
           ) : null}
 
-          <CardDetailFormLabel htmlFor="cardNumber">
+          <DetailsCardFormLabel htmlFor="cardNumber">
             Credit Card Number:
-          </CardDetailFormLabel>
-          <CardDetailFormInput
+          </DetailsCardFormLabel>
+          <DetailsCardFormInput
             type="number"
             id="cardNumber"
             {...formik.getFieldProps("cardNumber")}
           />
           {errors.cardNumber && touched.cardNumber ? (
-            <CardDetailFormError>{errors.cardNumber}</CardDetailFormError>
+            <DetailsCardFormError>{errors.cardNumber}</DetailsCardFormError>
           ) : null}
 
-          <CardDetailFormLabel htmlFor="expYear">
+          <DetailsCardFormLabel htmlFor="expYear">
             Expiration Year:
-          </CardDetailFormLabel>
-          <CardDetailFormInput
+          </DetailsCardFormLabel>
+          <DetailsCardFormInput
             type="number"
             id="expYear"
             {...formik.getFieldProps("expYear")}
           />
           {errors.expYear && touched.expYear ? (
-            <CardDetailFormError>{errors.expYear}</CardDetailFormError>
+            <DetailsCardFormError>{errors.expYear}</DetailsCardFormError>
           ) : null}
 
-          <CardDetailFormButton type="submit">Add Card</CardDetailFormButton>
-        </CardDetailForm>
-      </CardDetailContent>
-    </CardDetailWrapper>
+          <DetailsCardFormButton type="submit">Add Card</DetailsCardFormButton>
+        </DetailsCardForm>
+      </DetailsContent>
+    </DetailsWrapper>
   )
 }
 
-export default Form
+export default DetailsCard

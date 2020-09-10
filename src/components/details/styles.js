@@ -1,15 +1,15 @@
 import styled from "@emotion/styled"
 
-export const CardDetailWrapper = styled.main`
+export const DetailsWrapper = styled.main`
   margin: 0 auto;
   background: linear-gradient(
     to Bottom,
     var(--primary) var(--xxl),
-    transparent 75%
+    transparent 50%
   );
 `
 
-export const CardDetailContent = styled.div`
+export const DetailsContent = styled.div`
   margin: 0 auto var(--xl);
   max-width: 468px;
   width: calc(100% - (var(--md) * 2));
@@ -20,17 +20,34 @@ export const CardDetailContent = styled.div`
   box-shadow: var(--xs) var(--xs) var(--md) 0px rgba(0, 0, 0, 0.175);
 `
 
-export const CardDetailHeading = styled.h2`
+export const DetailsHeading = styled.h2`
   color: var(--primary);
   margin-bottom: var(--md);
 `
 
-export const CardDetailForm = styled.form`
+export const DetailsCardSuccess = styled.div`
+  h3 {
+    color: var(--primary);
+  }
+  ul {
+    margin-bottom: 0;
+    li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      display: inline-block;
+      width: var(--sm);
+      margin-left: var(-sm);
+    }
+  }
+`
+
+export const DetailsCardForm = styled.form`
   display: flex;
   flex-flow: column;
 `
 
-export const CardDetailFormLabel = styled.label`
+export const DetailsCardFormLabel = styled.label`
   font-size: var(--sm);
   color: var(--primary);
   margin-top: var(--sm);
@@ -39,7 +56,7 @@ export const CardDetailFormLabel = styled.label`
   }
 `
 
-export const CardDetailFormInput = styled.input`
+export const DetailsCardFormInput = styled.input`
   border: 1px solid var(--mid);
   border-radius: var(--xxs);
   padding: var(--xxs);
@@ -49,7 +66,7 @@ export const CardDetailFormInput = styled.input`
   -webkit-appearance: none;
 `
 
-export const CardDetailFormError = styled.span`
+export const DetailsCardFormError = styled.span`
   background-color: var(--accent);
   font-weight: 600;
   font-style: italic;
@@ -63,7 +80,7 @@ export const CardDetailFormError = styled.span`
   margin-top: var(--xs);
 `
 
-export const CardDetailFormButton = styled.button`
+export const DetailsCardFormButton = styled.button`
   background-color: var(--primary);
   border: none;
   border-radius: var(--xxs);

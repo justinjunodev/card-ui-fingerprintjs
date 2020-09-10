@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createHook } from "overmind-react"
 
 export const config = {
@@ -7,11 +8,9 @@ export const config = {
   },
   actions: {
     createCard({ state }) {
-      // eslint-disable-next-line no-param-reassign
       state.cardCreated = true
     },
     addCardDetails({ state }, values) {
-      // eslint-disable-next-line no-param-reassign
       state.cardDetails = values
     },
   },

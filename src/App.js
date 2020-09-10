@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "./components/header"
 import Card from "./components/card"
-import Form from "./components/form"
+import Details from "./components/details/Details"
 import Fingerprint from "./components/fingerprint"
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <Card />
-      <Form />
+      <Details />
       <Fingerprint />
     </div>
   )
