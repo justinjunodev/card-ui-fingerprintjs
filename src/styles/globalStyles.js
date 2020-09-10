@@ -32,30 +32,29 @@ const GlobalStyles = css`
     background-color: var(--light);
   }
   h1 {
-    font-size: var(--xl);
-    font-weight: 700;
+    font-size: var(--xxl);
+    font-weight: 600;
     line-height: var(--xl);
-    margin: 0 0 var(--lg);
   }
   h2 {
-    font-size: var(--lg);
-    font-weight: 700;
+    font-size: var(--xl);
+    font-weight: 600;
     line-height: var(--xl);
     margin: var(--lg) 0;
   }
   h3 {
-    font-size: var(--md);
-    font-weight: 700;
+    font-size: var(--lg);
+    font-weight: 600;
     margin: var(--lg) 0;
   }
   h4 {
-    font-size: var(--sm);
-    font-weight: 700;
+    font-size: var(--md);
+    font-weight: 600;
     margin: var(--lg) 0;
   }
   h5 {
     font-size: var(--sm);
-    font-weight: 700;
+    font-weight: 600;
     margin: var(--lg) 0 0;
   }
   p,
