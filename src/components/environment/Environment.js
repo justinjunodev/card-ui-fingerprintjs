@@ -1,8 +1,12 @@
-/* eslint-disable no-console */
 import React, { useState, useEffect } from "react"
 import Fingerprint2 from "fingerprintjs2"
+import {
+  EnvironmentWrapper,
+  EnvironmentHeading,
+  EnvironmentList,
+} from "./styles"
 
-const Fingerprint = () => {
+const Environment = () => {
   const [userFingerprint, setUserFingerprint] = useState(null)
   const [userIpData, setUserIpData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -25,15 +29,20 @@ const Fingerprint = () => {
       })
   }, [])
 
-  console.log(userFingerprint)
-  console.log(userIpData)
-
   return (
-    <>
-      <h4>Environment Details</h4>
-      {!isLoading && <p>See console for env details (temporary)</p>}
-    </>
+    <EnvironmentWrapper>
+      <EnvironmentHeading>Environment</EnvironmentHeading>
+      {!isLoading && (
+        <EnvironmentList>
+          <li>Platform: {userFingerprint[16].value}</li>
+          <li>
+            Location: {userIpData.city}, {userIpData.region}
+          </li>
+          <li>IP: {userIpData.query}</li>
+        </EnvironmentList>
+      )}
+    </EnvironmentWrapper>
   )
 }
 
-export default Fingerprint
+export default Environment

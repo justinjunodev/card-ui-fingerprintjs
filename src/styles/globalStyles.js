@@ -49,7 +49,6 @@ const GlobalStyles = css`
   h4 {
     font-size: var(--md);
     font-weight: 600;
-    margin: var(--lg) 0;
   }
   h5 {
     font-size: var(--sm);
