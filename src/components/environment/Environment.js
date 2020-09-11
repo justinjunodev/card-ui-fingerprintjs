@@ -35,9 +35,6 @@ const Environment = () => {
       {!isLoading && (
         <EnvironmentList>
           <li>Platform: {userFingerprint[16].value}</li>
-          <li>
-            Location: {userIpData.city}, {userIpData.region}
-          </li>
           <li>IP: {userIpData.query}</li>
         </EnvironmentList>
       )}
